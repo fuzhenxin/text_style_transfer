@@ -1,0 +1,46 @@
+[fuzx@icst10 eval]$ python classification.py data
+Using TensorFlow backend.
+filter word_count: 37182
+sentence train number: 198002
+sentence val number: 2000
+senti_pos: 99001.0
+senti_neg: 99001.0
+[fuzx@icst10 eval]$ python classification.py train
+Using TensorFlow backend.
+Loading data...
+198002 train sequences
+2000 test sequences
+Pad sequences (samples x time)
+        X_train shape: (198002, 20)
+        X_test shape: (2000, 20)
+        Build model...
+        classification.py:146: UserWarning: Update your `LSTM` call to the Keras 2 API: `LSTM(128, dropout=0.2, recurrent_dropout=0.2)`
+          model.add(LSTM(128, dropout_W=0.2, dropout_U=0.2))
+        Train...
+        /opt/anaconda2/lib/python2.7/site-packages/keras/models.py:837: UserWarning: The `nb_epoch` argument in `fit` has been renamed `epochs`.
+          warnings.warn('The `nb_epoch` argument in `fit` '
+                          Train on 198002 samples, validate on 2000 samples
+                          Epoch 1/2
+                          2017-08-30 17:40:37.376537: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+                          2017-08-30 17:40:37.376599: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+                          2017-08-30 17:40:37.376667: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+                          2017-08-30 17:40:37.376699: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+                          2017-08-30 17:40:37.376718: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+                          2017-08-30 17:40:44.572608: I tensorflow/core/common_runtime/gpu/gpu_device.cc:887] Found device 0 with properties: 
+                          name: TITAN X (Pascal)
+                          major: 6 minor: 1 memoryClockRate (GHz) 1.531
+                          pciBusID 0000:83:00.0
+                          Total memory: 11.90GiB
+                          Free memory: 11.76GiB
+                          2017-08-30 17:40:44.572688: I tensorflow/core/common_runtime/gpu/gpu_device.cc:908] DMA: 0 
+                          2017-08-30 17:40:44.572702: I tensorflow/core/common_runtime/gpu/gpu_device.cc:918] 0:   Y 
+                          2017-08-30 17:40:44.572724: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: TITAN X (Pascal), pci bus id: 0000:83:00.0)
+                             128/198002 [..............................] - ETA: 62934s - loss: 0.6934 - acc: 0.51562017-08-30 17:41:18.110148: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 3256 get requests, put_count=2482 evicted_count=1000 eviction_rate=0.402901 and unsatisfied allocation rate=0.575553
+                               1664/198002 [..............................] - ETA: 4870s - loss: 0.6760 - acc: 0.68932017-08-30 17:41:18.682299: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 1875 get requests, put_count=2172 evicted_count=1000 eviction_rate=0.460405 and unsatisfied allocation rate=0.3872
+                                 4096/198002 [..............................] - ETA: 1996s - loss: 0.5234 - acc: 0.77732017-08-30 17:41:19.632929: I tensorflow/core/common_runtime/gpu/pool_allocator.cc:247] PoolAllocator: After 5338 get requests, put_count=5415 evicted_count=1000 eviction_rate=0.184672 and unsatisfied allocation rate=0.183964
+                                 198002/198002 [==============================] - 106s - loss: 0.0407 - acc: 0.9854 - val_loss: 0.0308 - val_acc: 0.990055 to 720
+          Epoch 2/2
+          198002/198002 [==============================] - 65s - loss: 0.0112 - acc: 0.9963 - val_loss: 0.0322 - val_acc: 0.9880
+          1792/2000 [=========================>....] - ETA: 0sTest score: 0.0322308954969
+          Test accuracy: 0.988000000477
+
